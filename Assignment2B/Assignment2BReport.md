@@ -180,8 +180,8 @@ if (Key_Pressed[0] != -1)
 
 ### Position sent to vshader and calculations (lines 287 – 298):
 
-if(rotation)
-            Theta[Axis] = (int)(Theta[Axis] + 1.0) % 360;
+if(rotation) {
+	Theta[Axis] = (int)(Theta[Axis] + 1.0) % 360;
 
         position[0] += Dir_X;
         position[1] += Dir_Y;
@@ -195,3 +195,4 @@ if(rotation)
         glUniform3fv(theta, 1, Theta);
         glUniform4fv(positionInt, 1, position);
         glUniform3fv(cosineInt, 1, cosine);
+}
